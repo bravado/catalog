@@ -1,0 +1,16 @@
+public-proxy:
+  ports:
+    - "${http_port}:80"
+    - "${https_port}:443"
+  labels:
+    io.rancher.scheduler.global: 'true'
+    io.rancher.container.pull_image: always
+  tty: true
+  image: bravado/rancher-active-proxy
+  volumes:
+    - letsencrypt:/etc/letsencrypt
+    - htpasswd:/etc/nginx/htpasswd
+    - vhost.d:/etc/nginx/vhost.d
+    - html: /usr/share/nginx/html
+  stdin_open: true
+  volume_driver: "${volume_driver}"

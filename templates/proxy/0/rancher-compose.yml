@@ -1,0 +1,24 @@
+.catalog:
+  name: "Proxy público"
+  version: "0.1.0"
+  description: |
+    Componentes base para o ambiente
+  questions:
+  - variable: "http_port"
+    description: "Proxy HTTP Port"
+    label: "HTTP Port"
+    required: true
+    default: 80
+    type: "int"
+  - variable: "https_port"
+    description: "Proxy HTTPS Port"
+    label: "HTTPS Port"
+    required: true
+    default: 443
+    type: "int"
+  - variable: "volume_driver"
+    description: "Where to store persistent data (local, rancher-nfs, ...)"
+    label: "Volume Driver"
+    required: true
+    default: "local"
+    type: "string"
