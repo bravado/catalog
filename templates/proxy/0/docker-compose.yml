@@ -11,6 +11,6 @@ public-proxy:
     - letsencrypt:/etc/letsencrypt
     - htpasswd:/etc/nginx/htpasswd
     - vhost.d:/etc/nginx/vhost.d
-    - html: /usr/share/nginx/html
+    - html:/usr/share/nginx/html
   stdin_open: true
   volume_driver: "${volume_driver}"
