@@ -9,13 +9,13 @@
     label: "HTTP Port"
     required: true
     default: 80
-    type: "int"
+    type: "string"
   - variable: "https_port"
     description: "Proxy HTTPS Port"
     label: "HTTPS Port"
     required: true
     default: 443
-    type: "int"
+    type: "string"
   - variable: "volume_driver"
     description: "Where to store persistent data (local, rancher-nfs, ...)"
     label: "Volume Driver"
