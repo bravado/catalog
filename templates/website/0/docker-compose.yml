@@ -6,7 +6,7 @@ services:
   www:
     image: bravado/apache
     environment:
-      NR_APP_NAME: $${stack_name}
+      NR_APP_NAME: ${stack_name}
       NR_INSTALL_KEY: '${newrelic_key}'
       PHP_MAX_CHILDREN: '20'
       PHP_MAX_REQUESTS: '100'
@@ -19,7 +19,7 @@ services:
     external_links:
     - ${mysql_service}:mysql
     volumes:
-    - $${stack_name}:/var/www
+    - ${stack_name}:/var/www
     tty: true
     labels:
       rap.port: '80'
