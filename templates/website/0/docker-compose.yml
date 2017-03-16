@@ -1,12 +1,12 @@
 version: '2'
 volumes:
-  $${stack_name}:
+  ${stack_name}:
     driver: '${volume_driver}'
 services:
   www:
     image: bravado/apache
     environment:
-      NR_APP_NAME: '"$${stack_name}"'
+      NR_APP_NAME: $${stack_name}
       NR_INSTALL_KEY: '${newrelic_key}'
       PHP_MAX_CHILDREN: '20'
       PHP_MAX_REQUESTS: '100'
