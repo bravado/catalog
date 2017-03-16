@@ -1,0 +1,27 @@
+.catalog:
+  name: "Website"
+  version: "0.1.0"
+  description: |
+    New Website
+  questions:
+  - variable: "newrelic_key"
+    description: "Newrelic Key"
+    label: "Newrelic Key"
+    required: false
+    type: "string"
+  - variable: "volume_driver"
+    description: "Where to store persistent data (local, rancher-nfs, ...)"
+    label: "Volume Driver"
+    required: true
+    default: "rancher-nfs"
+    type: "string"
+  - variable: "mysql_service"
+    description: "Path to Mysql"
+    label: "Mysql Service"
+    required: true
+    type: "service"
+  - variable: "virtual_host"
+    description: "The website's domain names, separated by commas"
+    label: "Virtual Host"
+    required: true
+    type: "string"
