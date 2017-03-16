@@ -1,27 +1,23 @@
-version: '2'
-volumes:
-  ${stack_name}:
-    driver: '${volume_driver}'
-services:
-  www:
-    image: bravado/apache
-    environment:
-      NR_APP_NAME: ${stack_name}
-      NR_INSTALL_KEY: '${newrelic_key}'
-      PHP_MAX_CHILDREN: '20'
-      PHP_MAX_REQUESTS: '100'
-      PHP_MAX_SPARE_SERVERS: '10'
-      PHP_MEMORY_LIMIT: 128M
-      PHP_MIN_SPARE_SERVERS: '5'
-      PHP_START_SERVERS: '10'
-      PHP_TERMINATE_TIMEOUT: 1m
-    stdin_open: true
-    external_links:
-    - ${mysql_service}:mysql
-    volumes:
-    - ${stack_name}:/var/www
-    tty: true
-    labels:
-      rap.port: '80'
-      io.rancher.container.pull_image: always
-      rap.host: '${virtual_host}'
+www:
+  image: bravado/apache
+  environment:
+    NR_APP_NAME: ${stack_name}
+    NR_INSTALL_KEY: '${newrelic_key}'
+    PHP_MAX_CHILDREN: '20'
+    PHP_MAX_REQUESTS: '100'
+    PHP_MAX_SPARE_SERVERS: '10'
+    PHP_MEMORY_LIMIT: 128M
+    PHP_MIN_SPARE_SERVERS: '5'
+    PHP_START_SERVERS: '10'
+    PHP_TERMINATE_TIMEOUT: 1m
+  stdin_open: true
+  external_links:
+  - ${mysql_service}:mysql
+  volumes:
+  - ${storage_name}:/var/www
+  volume_driver: ${volume_driver}
+  tty: true
+  labels:
+    rap.port: '80'
+    io.rancher.container.pull_image: always
+    rap.host: '${virtual_host}'
