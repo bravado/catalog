@@ -4,6 +4,9 @@
   description: |
     New Website
   questions:
+  - variable: "stack_name"
+    required: true
+    type: string
   - variable: "newrelic_key"
     description: "Newrelic Key"
     label: "Newrelic Key"
