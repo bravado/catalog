@@ -1,0 +1,11 @@
+openldap:
+  image: bravado/openldap
+  environment:
+    OPENLDAP_DATABASE: '${openldap_database}'
+  stdin_open: true
+  volumes:
+  - ${storage_name}:/var/lib/ldap
+  volume_driver: ${volume_driver}
+  tty: true
+  labels:
+    io.rancher.container.pull_image: always
