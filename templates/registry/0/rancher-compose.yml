@@ -1,0 +1,23 @@
+.catalog:
+  name: Registry (Light)
+  description: |
+    Simple Docker registry.  No addons
+  uuid: registry-2
+  questions:
+  - variable: "registry_host"
+    description: "Registry Hostname"
+    label: "Registry Hostname"
+    required: true
+    type: "string"
+  - variable: "registry_volume"
+    description: "Volume to store registry data"
+    label: "Registry Volume"
+    required: true
+    default: "registry"
+    type: "string"
+  - variable: "volume_driver"
+    description: "Where to store persistent data (local, rancher-nfs, ...)"
+    label: "Volume Driver"
+    required: true
+    default: "local"
+    type: "string"

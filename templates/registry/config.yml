@@ -1,0 +1,6 @@
+name: Registry (Light)
+description: |
+  Simple Docker registry.  No addons
+version: 2
+category: Applications
+

@@ -1,0 +1,12 @@
+registry:
+  image: registry:2
+  stdin_open: true
+  volume_driver: ${volume_driver}
+  volumes:
+  - ${registry_volume}:/var/lib/registry
+  tty: true
+  labels:
+    rap.port: '5000'
+    io.rancher.container.pull_image: always
+    rap.host: ${registry_host}
+    rap.https_method: redirect
