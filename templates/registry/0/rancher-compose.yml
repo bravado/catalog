@@ -2,7 +2,7 @@
   name: Registry (Light)
   description: |
     Simple Docker registry.  No addons
-  uuid: registry-2
+  uuid: bravado-registry-2
   questions:
   - variable: "registry_host"
     description: "Registry Hostname"
